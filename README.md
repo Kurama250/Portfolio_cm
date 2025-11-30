@@ -217,4 +217,3 @@ This project is licensed under the GPL-3.0 License - see the LICENSE file for de
 <p align="center">
   <strong>Website created by <a href="https://github.com/Kurama250" target="_blank">Kurama</a></strong>
 </p>
-
