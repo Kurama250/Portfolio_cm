@@ -1,9 +1,6 @@
-/**
- * Styles CSS for Discord Community Manager Portfolio Website
- * 
- * @author Kurama250
- * @website https://github.com/Kurama250
- * @description Modern and responsive CSS styles for CM Discord portfolio website
+/*
+ * Created by Kurama250
+ * GitHub: https://github.com/Kurama250
  */
 
 * {
@@ -382,6 +379,13 @@ a:hover {
     align-items: center;
     padding: 8rem 0 4rem;
     background: linear-gradient(135deg, #36393f 0%, #1a1f2e 50%, #0f1419 100%);
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .hero-container {
@@ -572,6 +576,28 @@ a:hover {
 
 section {
     padding: 6rem 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about,
+.services,
+.portfolio,
+.contact {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .section-header {
@@ -745,16 +771,25 @@ section {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
 }
 
 .service-card {
     background: var(--bg-card);
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 12px;
     transition: var(--transition);
     border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+    flex-grow: 1;
 }
 
 .service-card:hover {
@@ -764,33 +799,38 @@ section {
 }
 
 .service-icon {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background: var(--gradient-primary);
-    border-radius: 12px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
     color: var(--text-primary);
+    flex-shrink: 0;
 }
 
 .service-card h3 {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     color: var(--text-primary);
+    font-size: 1.1rem;
+    line-height: 1.3;
 }
 
 .service-features {
     list-style: none;
-    margin-top: 1.5rem;
+    margin-top: 0.75rem;
 }
 
 .service-features li {
-    padding: 0.5rem 0;
+    padding: 0.35rem 0;
     color: var(--text-secondary);
     position: relative;
     padding-left: 1.5rem;
+    font-size: 0.85rem;
+    line-height: 1.4;
 }
 
 .service-features li::before {

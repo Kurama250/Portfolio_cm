@@ -1,9 +1,6 @@
-/**
- * JavaScript for Discord Community Manager Portfolio Website
- * 
- * @author Kurama250
- * @website https://github.com/Kurama250
- * @description Interactive features and animations for CM Discord portfolio website
+/*
+ * Created by Kurama250
+ * GitHub: https://github.com/Kurama250
  */
 
 const hamburger = document.querySelector('.hamburger');
@@ -56,6 +53,26 @@ function updateNavbar() {
 
 window.addEventListener('DOMContentLoaded', () => {
     updateNavbar();
+    
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        hero.classList.add('visible');
+    }
+    
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { 
+        threshold: 0.15,
+        rootMargin: '0px 0px -100px 0px'
+    });
+    
+    document.querySelectorAll('section:not(.hero)').forEach(section => {
+        sectionObserver.observe(section);
+    });
 });
 
 window.addEventListener('load', () => {
@@ -403,7 +420,7 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('error', (e) => {
-    console.error('JavaScript Error:', e.error);
+    console.error('Erreur JavaScript:', e.error);
 });
 
 if ('IntersectionObserver' in window) {
@@ -455,4 +472,4 @@ const debouncedScrollHandler = debounce(() => {
 
 window.addEventListener('scroll', debouncedScrollHandler);
 
-console.log('🚀 Discord Community Manager portfolio site loaded successfully!');
+console.log('🚀 Site portfolio Community Manager Discord chargé avec succès !');
