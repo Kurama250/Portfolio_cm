@@ -1,4 +1,4 @@
-<h1 align="center">Discord Community Manager Portfolio Website</h1>
+<h1 align="center">Discord Community Manager Portfolio WebSite</h1>
 <em><h5 align="center">(Programming Language - Html | Css | JavaScript)</h5></em>
 
 <p align="center">
